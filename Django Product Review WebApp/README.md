@@ -1,5 +1,4 @@
-# Assignment
-This repository is for the systems architecture and design assignment
+# Django WebApp
 Developed a comprehensive web application using Django framework, demonstrating proficiency in cloud-based project modules and adherence to the Model-View-Controller design pattern. Successfully enabled users to post reviews of electronic products, ensuring usability, functionality, and security.
 
 Led the development of a complex web application, integrating modern web architectures and cloud services to facilitate environmental data collection, processing, and analysis.
