@@ -1,0 +1,33 @@
+{% extends "itreporting/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+  <div class="content-section">
+    <div class="media">
+      {% if user.profile.image %}
+        <p><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="{{ user.username }}'s profile image"></p>
+      {% else %}
+        <!-- Display a default image or a placeholder if the user has no profile image -->
+        <p><img class="rounded-circle account-img" src="{% static 'path/to/default/image.jpg' %}" alt="{{ user.username }}'s profile image"></p>
+      {% endif %}
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+      </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Your Profile</legend>
+        {{ u_form | crispy }}
+        {{ p_form | crispy }}
+      </fieldset>
+      
+      <!-- Submit button -->
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

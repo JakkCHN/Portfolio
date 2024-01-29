@@ -1,0 +1,33 @@
+{% extends 'itreporting/base.html' %}
+
+{% block content %}
+  <article class="media content-section">
+    {% if product.product_picture %}
+      <img class="rounded-circle article-img" src="{{ product.product_picture.url }}" alt="{{ product.name }} Image"/>
+    {% else %}
+      <p>No image available</p>
+    {% endif %}
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted"><strong>Posted on: </strong>{{ product.date_submitted|date:"F d, Y H:i" }}</small>
+      </div>
+      <h2>{{ product.name }} ({{ product.manufacturer }})</h2>
+      <p class="article-content">
+        <strong>Average Cost:</strong> {{ product.average_cost }}<br>
+        <strong>Category:</strong> {{ product.category }}<br>
+        <strong>Release Date:</strong> {{ product.release_date }}<br>
+        <strong>Rating:</strong> {{ product.ratings }}<br>
+        <strong>Description:</strong> {{ product.description }}<br>
+        <!-- Add other attributes as needed -->
+      </p>
+      <div class="article-metadata">
+        <a class="mr-2"><strong>From: </strong>{{ product.author.username }}</a>
+      </div>
+      
+      {% if product.author == user %}
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'itreporting:product-update' product.id %}">Update</a>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'itreporting:product-delete' product.id %}">Delete</a>
+      {% endif %}
+    </div>
+  </article>
+{% endblock %}

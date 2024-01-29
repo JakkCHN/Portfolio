@@ -1,0 +1,47 @@
+{% extends 'itreporting/base.html' %}
+
+{% block content %}
+  <h2>Review Products</h2>
+
+  <form method="get" action="{% url 'itreporting:products' %}">
+    <label for="category">Filter by Category:</label>
+    <select name="product.category" id="product.category">
+      <option value="" selected>All</option>
+      <option value="product.category">Camera</option>
+      <option value="Category">Phone</option>
+      <option value="Category">Lamp</option>
+      <!-- Add other categories as needed -->
+    </select>
+    <button type="submit">Filter</button>
+  </form>
+  <h1 class="mb-3"> Reviews Posted by {{ view.kwargs.username }} {%
+    if is_paginated %} (page {{page_obj.number}} of {{page_obj.paginator.num_pages}}){% endif %}</h1>
+
+  {% for product in products %}
+    <article class="media content-section">
+      {% if product.product_picture %}
+        <img class="rounded-circle article-img" src="{{ product.product_picture.url }}" alt="{{ product.name }} Image"/>
+      {% else %}
+        <p>No image available</p>
+      {% endif %}
+      <div class="media-body">
+        <div class="article-metadata">
+          <small class="text-muted"><strong>Posted on: </strong>{{ product.date_submitted|date:"F d, Y H:i" }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'itreporting:product-detail' product.pk %}">{{ product.name }} ({{ product.manufacturer }})</a></h2>
+        <p class="article-content">
+          <strong>Description:</strong> {{ product.description }}<br>
+          <!-- Add other attributes as needed -->
+        </p>
+        <div class="article-metadata">
+          {% if product.author.profile.image %}
+            <img class="rounded-circle article-img" src="{{ product.author.profile.image.url }}" alt="{{ product.author.username }}'s profile image"/>
+          {% else %}
+            <p>No image available</p>
+          {% endif %}
+          <a class="mr-2"><strong>From: </strong>{{ product.author.username }}</a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock %}
