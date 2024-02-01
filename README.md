@@ -5,7 +5,7 @@ Welcome to my portfolio repository! Here, you'll find a collection of projects t
 ## Projects
 
 ### 1. Product Reviews Web App
-- **Description:** Developed a comprehensive web application using Django framework, demonstrating proficiency in cloud-based project modules and adherence to the Model-View-                     Controller design pattern. Successfully enabled users to post reviews of electronic products, ensuring usability, functionality, and security.
+- **Description:** Developed a comprehensive web application using Django framework, demonstrating proficiency in cloud-based project modules and adherence to the Model-View-  Controller design pattern. Successfully enabled users to post reviews of electronic products, ensuring usability, functionality, and security.
                    Led the development of a complex web application, integrating modern web architectures and cloud services to facilitate environmental data collection,                          processing, and analysis.
                    Showcased expertise in system design and development using monolithic architecture and cloud technologies, ensuring seamless integration and functionality.
                    Implemented robust security measures to safeguard sensitive data transmission and storage processes, meeting industry standards.
@@ -14,9 +14,9 @@ Welcome to my portfolio repository! Here, you'll find a collection of projects t
                    This project demonstrates my ability to lead complex development projects, leveraging cutting-edge technologies to deliver impactful solutions.
 
 ### 2. Automated System Administration: Bash Scripting Solution
-- **Description:** Developed and version-controlled a robust set of bash scripts to streamline system administration and automate routine tasks, earning top marks for                             innovation and efficiency.
+- **Description:** Developed and version-controlled a robust set of bash scripts to streamline system administration and automate routine tasks, earning top marks for innovation and efficiency.
 Key Features of the Project:
-                   Automation and System Administration Tasks: Crafted a comprehensive bash script to guide shop owners in the seamless execution of routine server maintenance                    and operational tasks.
+Automation and System Administration Tasks: Crafted a comprehensive bash script to guide shop owners in the seamless execution of routine server maintenance                    and operational tasks.
 Utilization of Essential Bash Functionalities:
 Loops: Implemented iterative processes to handle repetitive tasks efficiently.
 If-Else Statements: Incorporated conditional logic for decision-making within the script.
